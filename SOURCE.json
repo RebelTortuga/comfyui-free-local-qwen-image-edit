@@ -1,0 +1,12 @@
+{
+  "uploaded_filename": "Image To Image - Semi Art Gen - Clean Slate(3).json",
+  "uploaded_sha256": "4949326ab0f6a4412677d7b8ff697b8c82085d05cd1a099e1cd718a7f8b889ac",
+  "workflow_modified": true,
+  "adjustments": [
+    "Blank source image and active prompts",
+    "Preserve Prompt History auto-save and paths",
+    "Correct negative Clean Slate connection where required",
+    "Remove transient preview fields and canvas viewport state"
+  ],
+  "runtime_tested": false
+}
