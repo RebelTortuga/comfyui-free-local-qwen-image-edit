@@ -7,7 +7,9 @@
 
 <!-- rebeltortuga-banner:end -->
 
-# Free Local Qwen Image Editing
+# Semi-AI Image Editing
+
+**Release: v1.1.0**
 
 **Workflow by:** RebelTortuga  
 **Platform:** Local ComfyUI; prepared for a Windows setup, including Stability Matrix  
@@ -28,15 +30,20 @@ This is an independent community workflow, not an official product of the ComfyU
 - You need a capable GPU, disk space, and electricity; model and component licenses still apply.
 - Optional third-party hosting or services are **not part of this workflow** and may charge fees.
 
-## Workflow preview (illustration)
+## Preview
 
-![ComfyUI workflow layout preview](assets/workflow-preview.png)
+![Semi-AI image editing illustrative overview](assets/workflow-preview.webp)
 
-*Layout diagram rendered from this repository's `workflow.json`; not a live ComfyUI screenshot.*
+*Illustrative overview, not an exact wiring guide. The screenshot below shows the author's actual workflow with wires hidden for readability.*
 
-## Clean Slate Controller
+![Actual ComfyUI workflow layout](assets/workflow-screenshot.webp)
 
-The workflow includes the [RebelTortuga Clean Slate Controller](https://github.com/RebelTortuga/comfyui-clean-slate). Its `image_1`, `positive`, and `negative` inputs are connected to the source image and the corresponding Prompt History outputs. Five buttons clear the image, either prompt, both prompts, or all three. Prompt History remains enabled and stores history locally on each user's own machine; no previous prompt entries or images are bundled.
+## Clean Slate and mode selection
+
+Install [Clean Slate v0.2.0 or newer](https://github.com/RebelTortuga/comfyui-clean-slate/releases/tag/v0.2.0). This workflow uses both `CleanSlateController` and `CleanSlateImageMode` from that extension. The controller has five scoped clearing actions with the author's Reload labels; all actions ask for OK/Cancel and preserve wires. See its README for exact behavior.
+
+The fixed mode node has two IMAGE inputs: **1 Automatic** selects the full edited image, **2 Painted mask** selects the masked composite. The selected IMAGE output feeds Save Image. It replaces the previous dynamic ImpactSwitch; Impact Pack is no longer required by this graph.
+
 ## Start here
 
 1. Install/update [ComfyUI](https://github.com/Comfy-Org/ComfyUI) locally, either directly or through [Stability Matrix](https://github.com/LykosAI/StabilityMatrix).
@@ -64,11 +71,11 @@ The workflow includes the [RebelTortuga Clean Slate Controller](https://github.c
 ## Using the workflow
 
 1. Load an image. Enter an edit instruction in the positive prompt field of the prompt-history node.
-2. Leave MODE / ImpactSwitch at 1 for the full instruction-edited output.
+2. Leave Image Edit Mode at 1 for the full instruction-edited output.
 3. For mode 2, open the image in ComfyUI's Mask Editor, paint and save a mask, then set the switch to 2. This composites the generated edit into the original image through your mask.
 4. Run and inspect the output. An empty mask can make mode 2 appear unchanged.
 
-Automatic mode does not export an AI-selected object mask. The graph processes about 0.5 megapixels with 40 steps, CFG 4, Euler/simple, denoise 1. It uses no style LoRA. Filename capitalization must match the actual downloaded GGUF; select it again in the loader if necessary.
+Automatic mode does not export an AI-selected object mask. The graph processes about 0.5 megapixels with 40 steps, CFG 4, Euler/simple, denoise 0.9. It uses no style LoRA. Filename capitalization must match the actual downloaded GGUF; select it again in the loader if necessary.
 
 ## Prompt history and blank defaults
 
@@ -86,9 +93,9 @@ If `SelectPromptPairHistory` is unavailable, install/update the exact PromptHist
 
 ## Validation and provenance
 
-The workflow is derived from the actual Clean Slate JSON uploaded by the author. Source image and active prompts are blank. Prompt History retains its local save/recall configuration. Two source graphs needed a corrected negative-prompt link; all generation settings are preserved. `SOURCE.json` records the uploaded filename, checksum and changes.
+The workflow is derived from the author's latest `Image-To-Image-Semi-AI-Gen.json`. Source image and active prompts are blank. Prompt History retains its local configuration. The author's final layout, model selections and sampler settings are preserved. `SOURCE.json` records the source checksum and packaging adjustments.
 
-Run `python scripts/validate_workflow.py` to check graph references. Structural checks passed during packaging. No GPU inference, clean-machine installation, visual output quality, or complete dependency-version compatibility was tested here. Exported core node version metadata is not a certified minimum ComfyUI version.
+Run `python scripts/validate_workflow.py` to check graph references. Structural checks passed during packaging. The author confirmed generation and controller behavior in their own setup. Packaging checks do not substitute for a clean-machine GPU installation or certify every dependency version. Exported core node version metadata is not a certified minimum ComfyUI version.
 
 ## Frequently asked questions
 
@@ -139,7 +146,7 @@ Use this repository's GitHub Issues page for bug reports, improvements, and feat
 
 ## Clean template defaults
 
-Images and active positive/negative prompts start blank. Prompt History auto-save and recall remain enabled; the history JSON files themselves are **not** bundled. The preview PNG is included at `assets/workflow-preview.png`.
+Images and active positive/negative prompts start blank. Prompt History auto-save and recall remain enabled; the history JSON files themselves are **not** bundled. The preview PNG is included at `assets/workflow-preview.webp`.
 
 ---
 
@@ -167,3 +174,4 @@ Do not upload passwords, access tokens, browser profiles, private backups, or un
 ## Official Project Guide
 
 [View the comfyui-free-local-qwen-image-edit project guide](https://rebeltortuga.github.io/projects/comfyui-free-local-qwen-image-edit.html)
+

@@ -1,12 +1,13 @@
 {
-  "uploaded_filename": "Image To Image - Semi Art Gen - Clean Slate(3).json",
-  "uploaded_sha256": "4949326ab0f6a4412677d7b8ff697b8c82085d05cd1a099e1cd718a7f8b889ac",
+  "release": "1.1.0",
+  "uploaded_filename": "Image-To-Image-Semi-AI-Gen.json",
+  "uploaded_sha256": "e8a5a87a0203f8a45082365344c8c02a668102ff645e2b020546d4801d400b0b",
   "workflow_modified": true,
   "adjustments": [
-    "Blank source image and active prompts",
-    "Preserve Prompt History auto-save and paths",
-    "Correct negative Clean Slate connection where required",
-    "Remove transient preview fields and canvas viewport state"
+    "Blank source image and active prompt fields",
+    "Remove transient preview data and cleared markers",
+    "Preserve author layout, final generation settings and fixed mode switch"
   ],
-  "runtime_tested": false
+  "author_reported_runtime_success": true,
+  "packager_gpu_tested": false
 }
