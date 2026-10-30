@@ -32,9 +32,9 @@ This is an independent community workflow, not an official product of the ComfyU
 
 ## Preview
 
-![Semi-AI image editing illustrative overview](assets/workflow-preview.webp)
+![Semi-AI image editing presentation preview](assets/semi-ai-workflow.webp)
 
-*Illustrative overview, not an exact wiring guide. The screenshot below shows the author's actual workflow with wires hidden for readability.*
+*Screenshot-based promotional preview, not an exact wiring guide. The original screenshot below shows the actual workflow with wires hidden for readability.*
 
 ![Actual ComfyUI workflow layout](assets/workflow-screenshot.webp)
 
