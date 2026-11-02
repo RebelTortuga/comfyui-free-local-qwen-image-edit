@@ -9,7 +9,7 @@
 
 # Semi-AI Image Editing
 
-**Release: v1.1.0**
+**Release: v1.1.1**
 
 **Workflow by:** RebelTortuga  
 **Platform:** Local ComfyUI; prepared for a Windows setup, including Stability Matrix  
