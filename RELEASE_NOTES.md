@@ -1,14 +1,12 @@
-# Semi-AI Image Editing v1.1.0
+# Semi-AI Image Editing v1.1.1
 
+Documentation and packaging refresh for the existing v1.1.0 workflow.
 
-- Update to the author's final Semi-AI workflow layout and settings, including denoise 0.9.
-- Route the selected generated result to Save Image instead of the mask preview, restoring the generation dependency path through KSampler and VAE Decode.
-- Replace the dynamic INT-typed ImpactSwitch with CleanSlateImageMode: two fixed IMAGE inputs, automatic/painted-mask selection and no growing unused input list.
-- Integrate Clean Slate v0.2.0: five scoped clearing actions, five image inputs, five masks, separate/paired prompt support, two latents, confirmation/cancellation, preserved wires, persistent cleared previews and saved controller size.
-- Keep active prompts and source-image selection blank; preserve local PromptHistory configuration without bundling any history.
-- Update dependency and options documentation; add actual screenshots and a separate illustrative overview.
+- Include the current workflow overview image.
+- Update the README and release metadata to match the downloadable package.
+- Retain dependency, source, safety, security, and MIT license records in the package.
+- No workflow graph or validator logic changed from v1.1.0.
 
-Validation: graph links/types and output reachability checked. The author confirmed generation in their setup; clean-machine dependency compatibility and minimum hardware requirements remain unverified.
+Validation: graph links, types, blank defaults, acyclic structure, and Save Image generation reachability passed. The previously author-confirmed generation was not repeated as a clean-machine or GPU test; minimum hardware remains unverified.
 
-
-Requires Clean Slate v0.2.0 or newer, the listed custom nodes and separately downloaded models. Download the attached ZIP, install dependencies, restart ComfyUI and load workflow.json. No paid generation API is required.
+Requires Clean Slate v0.2.0 or newer, the listed custom nodes and separately downloaded models. Download the attached ZIP, install dependencies, restart ComfyUI and load `workflow.json`. No paid generation API is required.

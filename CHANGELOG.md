@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.1 — Trust and documentation refresh
+
+- Add the current workflow overview image to the release package.
+- Update the README and release metadata to match the downloadable package.
+- Retain the dependency, source, safety, security, and MIT license records in the package.
+- No workflow graph or validator logic changed from 1.1.0.
+
+Validation: graph links, types, blank defaults, acyclic structure, and Save Image generation reachability passed. The previously author-confirmed generation was not repeated as a clean-machine or GPU test; minimum hardware remains unverified.
+
 ## 1.1.0 — Fixed output routing and integrated Clean Slate
 
 - Update to the author's final Semi-AI workflow layout and settings, including denoise 0.9.
